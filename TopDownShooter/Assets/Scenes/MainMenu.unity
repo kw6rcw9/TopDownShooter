@@ -839,8 +839,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3632b15022f40784c9268e419fcb0c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SettingsPanel: {fileID: 690606997}
-  MenuPanel: {fileID: 496973641}
+  settingsPanel: {fileID: 690606997}
+  menuPanel: {fileID: 496973641}
 --- !u!1 &797265465
 GameObject:
   m_ObjectHideFlags: 0
