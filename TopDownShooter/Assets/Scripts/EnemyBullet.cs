@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     //[SerializeField] private BlowEffect _blowEffect;
      private Rigidbody2D _rigidbody2D;
@@ -21,9 +21,14 @@ public class Bullet : MonoBehaviour
         _rigidbody2D.AddForce(transform.right * _speed * Time.fixedDeltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        DestroyBullet();
+        
+        if (!collision.gameObject.GetComponent<Bullet>())
+        {
+            DestroyBullet();
+            
+        }
         //ShowEffect();
     }
 
