@@ -36,6 +36,7 @@ namespace UISystem
             PlayerPrefs.Save();
 
             SceneManager.LoadScene(0);
+            Time.timeScale = 1;
         }
 
         public void Settings()

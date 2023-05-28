@@ -1,11 +1,13 @@
+using Bullets;
 using UnityEngine;
 
 namespace EnemyCore.EnemyAttack
 {
-    public class EnemyShooting : MonoBehaviour
+    public class PatrolShooting : MonoBehaviour
     { 
         private PlayerDetector _playerDetector;
         [SerializeField] EnemyBullet _bullet;
+       
         [SerializeField] private Transform _firePoint;
         [SerializeField] private float _shootDelay;
         private float _time;
