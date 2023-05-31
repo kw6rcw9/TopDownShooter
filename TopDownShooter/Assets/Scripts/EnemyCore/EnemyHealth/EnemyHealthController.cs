@@ -28,6 +28,7 @@ namespace EnemyCore.EnemyHealth
         {
             if (col.gameObject.GetComponent<Bullet>())
             {
+                _healthBar.HealthBar.gameObject.SetActive(true);
                 if (GetComponent<EnemyStaticRotate>())
                 {
                 TakeDamage(damageToPatrol);

@@ -1,6 +1,7 @@
 using DG.Tweening;
 using EnemyCore;
 using EnemyCore.EnemyHealth;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,8 @@ namespace UISystem.HPSystem
 
        
             [SerializeField] private Image healthBarImage;
+            [SerializeField] private Canvas healthBar;
+            public Canvas HealthBar => healthBar;
             [SerializeField] private EnemyHealthController enemy;
            
             public void UpdateHealthBar()

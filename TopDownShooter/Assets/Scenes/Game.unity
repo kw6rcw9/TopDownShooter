@@ -1828,6 +1828,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953248188}
   m_CullTransparentMesh: 1
+--- !u!223 &1032440771 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 1024025425, guid: 6cea2a7f68d11aa4798a0d9b7b5fb8cd, type: 3}
+  m_PrefabInstance: {fileID: 3404704980676294608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1051112485 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2468529066536587076, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
@@ -2175,6 +2180,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!223 &1171595249 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8644188564328353481, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
+  m_PrefabInstance: {fileID: 3853442359644472219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1343597500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3946411687292612096, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}
@@ -2776,6 +2786,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843243774}
   m_CullTransparentMesh: 1
+--- !u!223 &1914071981 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 1992270852720870654, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}
+  m_PrefabInstance: {fileID: 3946411686468509123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1948399407
 GameObject:
   m_ObjectHideFlags: 0
@@ -3109,6 +3124,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 576791962, guid: 6cea2a7f68d11aa4798a0d9b7b5fb8cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 761641912, guid: 6cea2a7f68d11aa4798a0d9b7b5fb8cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 761641917, guid: 6cea2a7f68d11aa4798a0d9b7b5fb8cd, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1032440771}
+    - target: {fileID: 1024025421, guid: 6cea2a7f68d11aa4798a0d9b7b5fb8cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3404704982071845271, guid: 6cea2a7f68d11aa4798a0d9b7b5fb8cd, type: 3}
       propertyPath: m_Name
       value: SniperEnemy
@@ -3158,7 +3189,7 @@ PrefabInstance:
       value: 210.55
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 3404704982071845272, guid: 6cea2a7f68d11aa4798a0d9b7b5fb8cd, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 6cea2a7f68d11aa4798a0d9b7b5fb8cd, type: 3}
 --- !u!1001 &3853442359644472219
 PrefabInstance:
@@ -3167,11 +3198,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2642294931673473984, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1171595249}
     - target: {fileID: 4129172132228401450, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
       propertyPath: m_Name
       value: PatrolEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 4129172132228401450, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390210007358918483, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5772136952040888940, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -3304,9 +3347,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5645077021642612172, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7608850363968182128, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1407284181}
+    - target: {fileID: 7608850363968182128, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1914071981}
+    - target: {fileID: 9218439738185960702, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}

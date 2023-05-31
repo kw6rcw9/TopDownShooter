@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BarHolder : MonoBehaviour
+namespace UISystem.HPSystem
 {
-    Quaternion _startRotation;
+    public class BarHolder : MonoBehaviour
+    {
+        Quaternion _startRotation = Quaternion.Euler(0,0,0);
     
-    void Start() {
+        void Start() {
         
-        _startRotation = transform.rotation;
+           transform.rotation = _startRotation;
        
-    }
-    void Update() {
-        transform.rotation = _startRotation;
+        }
+        void Update() {
+            transform.rotation = _startRotation;
         
         
+        }
     }
 }
