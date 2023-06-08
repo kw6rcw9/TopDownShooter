@@ -1,53 +1,53 @@
+using System;
 using System.Collections;
 using EnemyCore.EnemyAttack;
 using EnemyCore.EnemyMovement;
 using UISystem.HPSystem;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace EnemyCore.EnemyHealth
 {
     public class EnemyHealthController : MonoBehaviour
     {
-        [SerializeField] private float _hp;
-        [SerializeField] private float _Maxhp;
-        public float HP => _hp;
-        public float MaxHP => _Maxhp;
+        [SerializeField] private float hp;
+        [SerializeField] private float maxhp;
         [SerializeField] private float damageToPatrol;
         [SerializeField] private float damageToSniper;
         [SerializeField] private float damageToFighter;
-        [SerializeField] private EnemyHealthBar _healthBar;
-        
+        [SerializeField] private EnemyHealthBar healthBar;
+        public Action<Transform> Explosion;
+        public float HP => hp;
+        public float MaxHP => maxhp;
         private float _damage;
-        private void Update()
-        {
-            //HpChange?.Invoke();
-        }
-   
+        
+        
+       
         private void OnTriggerEnter2D(Collider2D col)
         {
             if (col.gameObject.GetComponent<Bullet>())
             {
-                _healthBar.HealthBar.gameObject.SetActive(true);
+                healthBar.HealthBar.gameObject.SetActive(true);
                 if (GetComponent<EnemyStaticRotate>())
                 {
                 TakeDamage(damageToPatrol);
                 
-                StartCoroutine(ChangeColor());
+                
                     
                 }
                 else if (GetComponent<MeleeAttack>())
                 {
                     TakeDamage(damageToFighter);
                     
-                    StartCoroutine(ChangeColor());
+                    
                     
                 }
                 else if (gameObject.layer == 7)
                 {
                     TakeDamage(damageToSniper);
                     
-                    StartCoroutine(ChangeColor());
+                    
                     
                 }
             }
@@ -59,17 +59,19 @@ namespace EnemyCore.EnemyHealth
    
         private void TakeDamage(float damageType)
         {
-            if (_hp > 0)
+            if (hp > 0)
             {
-                _hp-= damageType;
-                if (_hp < 0)
-                    _hp = 0;
+                StartCoroutine(ChangeColor());
+                hp-= damageType;
+                if (hp < 0)
+                    hp = 0;
                    
             }
-            _healthBar.UpdateHealthBar();
-            if(_hp == 0)
+            healthBar.UpdateHealthBar();
+            if(hp == 0)
             {
-                Destroy(gameObject);
+                Explosion?.Invoke(gameObject.transform);
+                gameObject.SetActive(false);
                 
             }
                    
@@ -78,7 +80,7 @@ namespace EnemyCore.EnemyHealth
         IEnumerator ChangeColor()
         {
             GetComponent<Renderer>().material.color = Color.red;
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.2f);
             GetComponent<Renderer>().material.color = Color.white;
    
         }

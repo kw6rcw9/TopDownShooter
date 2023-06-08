@@ -214,17 +214,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &107602569 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7608850363968182128, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}
-  m_PrefabInstance: {fileID: 3946411686468509123}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e27fa9f18a305e4a8855e7cb6c35d4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &109092137
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +787,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -864,13 +854,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -9.999999}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5654cbefe48da4240bae0b36021afe8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1051112485}
+  offset: {x: 0, y: 2.25, z: -1}
 --- !u!1 &558993096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,61 +2189,17 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 8644188564328353481, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
   m_PrefabInstance: {fileID: 3853442359644472219}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1343597500 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3946411687292612096, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}
+--- !u!114 &1407284181 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4967248129411746697, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}
   m_PrefabInstance: {fileID: 3946411686468509123}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1407284169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343597500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fc09dfea662494390462faa793a477, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 3.88
-  _angle: 92
-  _targetMask:
-    serializedVersion: 2
-    m_Bits: 8
-  _obstructionMask:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &1407284175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343597500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62186f6e6e1ec9b45a5c7aca492c3185, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1407284181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343597500}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c76de83b43006b47ad6091cacb30662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 50
-  _Maxhp: 50
-  damageToPatrol: 0
-  damageToSniper: 0
-  damageToFighter: 5
-  _healthBar: {fileID: 107602569}
 --- !u!1 &1442115497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,43 +2311,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1573673945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2468529066536587102, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
+--- !u!114 &1573673947 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4872093154979460793, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
   m_PrefabInstance: {fileID: 2468529066399759445}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1573673946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573673945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1c8446d008914d4ca93f5ae86e6650c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthController: {fileID: 1573673947}
-  _healthText: {fileID: 1948399408}
---- !u!114 &1573673947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573673945}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 443b18251abec1040a12941d74b4d342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 51
-  _Maxhp: 51
-  damageFromPetrol: 4
-  damageFromSniper: 33.13
-  damageFromFighter: 5
-  _healthBar: {fileID: 1641077339}
 --- !u!1 &1592960021
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,10 +2993,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2468529066171363502, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.784
-      objectReference: {fileID: 0}
     - target: {fileID: 2468529066536587076, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3107,14 +3037,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2468529066536587097, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
-      propertyPath: _speed
-      value: 5.24
-      objectReference: {fileID: 0}
     - target: {fileID: 2468529066536587102, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4872093154979460793, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 1641077339}
+    - target: {fileID: 0}
+      propertyPath: _healthText
+      value: 
+      objectReference: {fileID: 1948399408}
+    - target: {fileID: 0}
+      propertyPath: _healthController
+      value: 
+      objectReference: {fileID: 1573673947}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
 --- !u!1001 &3404704980676294608
@@ -3266,10 +3204,6 @@ PrefabInstance:
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 1078312086}
-    - target: {fileID: 9174778343941350658, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
-      propertyPath: damageToPatrol
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
 --- !u!1001 &3946411686468509123
@@ -3279,10 +3213,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1829685233764215767, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}
-      propertyPath: _speed
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3946411687292612096, guid: 80c26751b8fa6bf48b99869a77d0b644, type: 3}
       propertyPath: m_Name
       value: MeeleEnemy

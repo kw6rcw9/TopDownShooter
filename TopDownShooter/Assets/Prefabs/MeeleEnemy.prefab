@@ -98,6 +98,10 @@ GameObject:
   - component: {fileID: 3946411687292612103}
   - component: {fileID: -8187245870636255871}
   - component: {fileID: -1829685233764215767}
+  - component: {fileID: 7147593374440387062}
+  - component: {fileID: 4967248129411746697}
+  - component: {fileID: 8195418567911259495}
+  - component: {fileID: 2895913321777078210}
   m_Layer: 0
   m_Name: MeeleEnemy
   m_TagString: Untagged
@@ -245,7 +249,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52db043e985844b4f9efd8bf9a9e69d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
+  _speed: 0.5
+--- !u!114 &7147593374440387062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946411687292612096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d6b2e385081a64ab6578696f698f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blow: {fileID: 2852374410647858887, guid: 3871f8895e2a83d4b909eb2ea54778a5, type: 3}
+  healthController: {fileID: 4967248129411746697}
+--- !u!114 &4967248129411746697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946411687292612096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c76de83b43006b47ad6091cacb30662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
+  maxhp: 10
+  damageToPatrol: 0
+  damageToSniper: 0
+  damageToFighter: 5
+  healthBar: {fileID: 7608850363968182128}
+--- !u!114 &8195418567911259495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946411687292612096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85fc09dfea662494390462faa793a477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 3.88
+  _angle: 92
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 8
+  _obstructionMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &2895913321777078210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946411687292612096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62186f6e6e1ec9b45a5c7aca492c3185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5645077021642612172
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarImage: {fileID: 525658477303758445}
+  healthBar: {fileID: 0}
   enemy: {fileID: 0}
 --- !u!1 &9218439738185960702
 GameObject:

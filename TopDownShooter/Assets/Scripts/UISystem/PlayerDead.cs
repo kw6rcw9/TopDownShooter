@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using PlayerCore.PlayerHealth;
@@ -9,8 +10,12 @@ public class PlayerDead : MonoBehaviour
    [SerializeField] private PlayerHealthController player;
    [SerializeField] private GameObject panel;
 
-    
-    void Update()
+   private void Start()
+   {
+       Time.timeScale = 1;
+   }
+
+   void Update()
     {
         if (player.HP == 0)
         {

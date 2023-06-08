@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2468529066171363503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.56, y: -0.07, z: 0}
+  m_LocalPosition: {x: 0.784, y: -0.07, z: 0}
   m_LocalScale: {x: 0.90041745, y: 0.90041745, z: 0.90041745}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2468529066536587099}
   - component: {fileID: 2468529066536587096}
   - component: {fileID: 2468529066536587097}
+  - component: {fileID: 4872093154979460793}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -183,4 +184,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a2a44b232ca53469752515c2eead12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _speed: 5.24
+--- !u!114 &4872093154979460793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468529066536587102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443b18251abec1040a12941d74b4d342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 51
+  _Maxhp: 51
+  damageFromPetrol: 4
+  damageFromSniper: 33.13
+  damageFromFighter: 5
+  _healthBar: {fileID: 0}

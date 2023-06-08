@@ -20,14 +20,18 @@ namespace UISystem.HPSystem
             public void UpdateHealthBar()
             {
                 float duration = 0.75f * (enemy.HP / enemy.MaxHP);
+                
                 healthBarImage.DOFillAmount( enemy.HP / enemy.MaxHP, duration );
+                    
+                
                 Color newColor = Color.green;
                 if ( enemy.HP < enemy.MaxHP * 0.25f ) {
                     newColor = Color.red;
                 } else if ( enemy.HP < enemy.MaxHP * 0.66f ) {
                     newColor = new Color( 1f, .64f, 0f, 1f );
                 }
-                healthBarImage.DOColor( newColor, duration );
+                
+                    healthBarImage.DOColor( newColor, duration );
             }
             
         

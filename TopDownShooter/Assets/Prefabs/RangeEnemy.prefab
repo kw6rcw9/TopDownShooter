@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarImage: {fileID: 761641915}
+  healthBar: {fileID: 0}
   enemy: {fileID: 251971719}
 --- !u!1 &1024025421
 GameObject:
@@ -466,6 +467,7 @@ GameObject:
   - component: {fileID: 3404704982071845278}
   - component: {fileID: 3404704982071845279}
   - component: {fileID: 251971719}
+  - component: {fileID: 5147322497084953073}
   m_Layer: 7
   m_Name: RangeEnemy
   m_TagString: Untagged
@@ -651,9 +653,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c76de83b43006b47ad6091cacb30662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 50
-  _Maxhp: 50
+  hp: 10
+  maxhp: 10
   damageToPatrol: 0
   damageToSniper: 5
   damageToFighter: 0
-  _healthBar: {fileID: 761641917}
+  healthBar: {fileID: 761641917}
+--- !u!114 &5147322497084953073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404704982071845271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d6b2e385081a64ab6578696f698f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blow: {fileID: 2852374410647858887, guid: 3871f8895e2a83d4b909eb2ea54778a5, type: 3}
+  healthController: {fileID: 251971719}
