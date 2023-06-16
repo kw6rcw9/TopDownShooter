@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -4}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 22, y: 52}
+  m_SizeDelta: {x: 583.11, y: 72.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &31674792
 MonoBehaviour:
@@ -251,8 +251,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -153.2, y: -112.8}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -536.32996, y: -344.52002}
+  m_SizeDelta: {x: 583.11, y: 109.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &109092139
 MonoBehaviour:
@@ -385,8 +385,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 159.4, y: -112.8}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 602.92, y: -344.52002}
+  m_SizeDelta: {x: 583.11, y: 109.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112306041
 MonoBehaviour:
@@ -562,6 +562,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118272581}
   m_CullTransparentMesh: 1
+--- !u!114 &171775152 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3853442358184404451, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
+  m_PrefabInstance: {fileID: 3853442359644472219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52db043e985844b4f9efd8bf9a9e69d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &406576057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1186,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -1470,8 +1481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 47}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 22.000015, y: 237.85999}
+  m_SizeDelta: {x: 583.11, y: 72.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &895759338
 MonoBehaviour:
@@ -1559,7 +1570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: -12}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &896460258
@@ -1586,10 +1597,10 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2369,7 +2380,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.949723}
+  m_Offset: {x: 0, y: -0.014916778}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2380,7 +2391,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 6.899446}
+  m_Size: {x: 1, y: 1.0298333}
   m_EdgeRadius: 0
 --- !u!224 &1442115501
 RectTransform:
@@ -3198,6 +3209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SniperEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3404704982071845273, guid: 6cea2a7f68d11aa4798a0d9b7b5fb8cd, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 807194993}
     - target: {fileID: 3404704982071845276, guid: 6cea2a7f68d11aa4798a0d9b7b5fb8cd, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3252,10 +3267,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 232134460975494702, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
+      propertyPath: _folow
+      value: 
+      objectReference: {fileID: 171775152}
+    - target: {fileID: 232134460975494702, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 807194993}
     - target: {fileID: 2642294931673473984, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1171595249}
+    - target: {fileID: 3853442358184404451, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 807194993}
     - target: {fileID: 4129172132228401450, guid: c61aaa51906e5a04b92188b09d3a6061, type: 3}
       propertyPath: m_Name
       value: PatrolEnemy

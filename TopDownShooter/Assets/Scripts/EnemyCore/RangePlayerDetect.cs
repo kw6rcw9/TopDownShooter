@@ -4,7 +4,7 @@ namespace EnemyCore
 {
     public class RangePlayerDetect : ADetectController
     {
-        
+       
 
       
        
@@ -28,6 +28,8 @@ namespace EnemyCore
 
                     if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, obsMask))
                         SeePlayer(true, target.gameObject);
+                        
+                    
                     else
                         SeePlayer(false);
                 }

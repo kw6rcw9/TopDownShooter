@@ -7,11 +7,12 @@ namespace UISystem
 {
     public class Menu : MonoBehaviour
     {
-        [SerializeField] private GameObject menuPanel;
-        [SerializeField] private GameObject settingsPanel;
-        [SerializeField] private AudioMixer audioMixer;
-        [SerializeField] private Slider sliderEffects;
-        [SerializeField] private Slider sliderMusics;
+        [SerializeField] private GameObject _menuPanel;
+        [SerializeField] private GameObject _instructionPanel;
+        [SerializeField] private GameObject _settingsPanel;
+        [SerializeField] private AudioMixer _audioMixer;
+        [SerializeField] private Slider _sliderEffects;
+        [SerializeField] private Slider _sliderMusics;
 
         
         // void Awake()
@@ -41,8 +42,13 @@ namespace UISystem
 
         public void Settings()
         {
-            menuPanel.SetActive(false);
-            settingsPanel.SetActive(true);
+            _menuPanel.SetActive(false);
+            _settingsPanel.SetActive(true);
+        }
+        public void Instruction()
+        {
+            _menuPanel.SetActive(false);
+            _instructionPanel.SetActive(true);
         }
 
         public void Back()
@@ -50,40 +56,44 @@ namespace UISystem
             // PlayerPrefs.SetFloat("Music", sliderMusics.value);
             // PlayerPrefs.SetFloat("Effects", sliderEffects.value);
 
-            menuPanel.SetActive(true);
-            settingsPanel.SetActive(false);
+            _menuPanel.SetActive(true);
+            if(_settingsPanel.activeSelf)
+                _settingsPanel.SetActive(false);
+           
+            _instructionPanel.SetActive(false);
+            
         }
 
         public void ChangeSound()
         {
-            audioMixer.SetFloat("Music", sliderMusics.value);
-            audioMixer.SetFloat("Effects", sliderEffects.value);
+            _audioMixer.SetFloat("Music", _sliderMusics.value);
+            _audioMixer.SetFloat("Effects", _sliderEffects.value);
 
         }
 
         public void SoundOff()
         {
-            audioMixer.SetFloat("Effects", -80f);
-            PlayerPrefs.SetFloat("EffectsOff", sliderEffects.value);
+            _audioMixer.SetFloat("Effects", -80f);
+            PlayerPrefs.SetFloat("EffectsOff", _sliderEffects.value);
        
         }
 
         public void MusicOff()
         {
-            audioMixer.SetFloat("Music", -80f);
-            PlayerPrefs.SetFloat("MusicOff", sliderMusics.value);
+            _audioMixer.SetFloat("Music", -80f);
+            PlayerPrefs.SetFloat("MusicOff", _sliderMusics.value);
          
         }
         
         private void SoundOn()
         {
-            sliderEffects.value = PlayerPrefs.GetFloat("EffectsOff");
+            _sliderEffects.value = PlayerPrefs.GetFloat("EffectsOff");
          
         }
 
         private void MusicOn()
         {
-            sliderMusics.value = PlayerPrefs.GetFloat("MusicOff");
+            _sliderMusics.value = PlayerPrefs.GetFloat("MusicOff");
 
         }
 

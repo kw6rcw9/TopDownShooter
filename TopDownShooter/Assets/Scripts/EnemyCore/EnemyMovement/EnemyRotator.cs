@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -6,16 +7,23 @@ namespace EnemyCore.EnemyMovement
 {
     public class EnemyRotator : MonoBehaviour
     {
+        [SerializeField] private GameObject _player;
+       
         private PlayerDetector _playerDetector;
         private Rigidbody2D _rigidbody2D;
         private Vector3 _direction;
+        private Vector3 _startDirection;
         private Vector3 _lookAt;
         private FollowPlayer _followPlayer;
         
 
         private void Start()
         {
-            _followPlayer = GetComponent<FollowPlayer>();
+            if (GetComponent<FollowPlayer>())
+            {
+                _followPlayer = GetComponent<FollowPlayer>();
+                
+            }
             if (!GetComponent<Rigidbody2D>())
             {
              gameObject.AddComponent<Rigidbody2D>();
@@ -28,24 +36,46 @@ namespace EnemyCore.EnemyMovement
             _rigidbody2D.mass = 10;
             _rigidbody2D.freezeRotation = true;
             _playerDetector = GetComponent<PlayerDetector>();
-            
-           
+
+            _startDirection = transform.up;
 
         }
 
         void Update()
         {
-            if (_playerDetector.Player != null)
+            if (GetComponent<FollowPlayer>())
             {
-               
+                if (_followPlayer.IsDetected )
+                {
+                   
+                    
+                    _lookAt = _player.transform.position;
+                    _direction = _lookAt - transform.position;
+                    _direction.Normalize();
+                    LookAtPoint();
+                }
                 
+            }
+            else if (_playerDetector.Player)
+            {
                 _lookAt = _playerDetector.Player.transform.position;
                 _direction = _lookAt - transform.position;
                 _direction.Normalize();
                 LookAtPoint();
+                
             }
 
-            
+            if (!GetComponent<FollowPlayer>() && _playerDetector.Player == null)
+            {
+
+                _direction = _startDirection;
+                _direction.Normalize();
+                LookAtPoint();
+                
+                
+            }
+
+
         }
         private void LookAtPoint()
         {

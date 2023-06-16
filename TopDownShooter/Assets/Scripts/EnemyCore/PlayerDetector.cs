@@ -1,4 +1,6 @@
+using System;
 using EnemyCore.EnemyAttack;
+using EnemyCore.EnemyMovement;
 using UnityEngine;
 
 namespace EnemyCore
@@ -9,7 +11,9 @@ namespace EnemyCore
         [Range(0, 360)] [SerializeField] private float _angle;
         [SerializeField] private LayerMask _targetMask;
         [SerializeField] private LayerMask _obstructionMask;
+        
         private ADetectController _detectController;
+       
 
         public GameObject Player => _detectController._player;
         void Start()
@@ -23,12 +27,17 @@ namespace EnemyCore
                 _detectController = gameObject.AddComponent<RangePlayerDetect>();
                 
             }
+
+            
+            
         
         }
 
         
         void Update()
         {
+           
+            
             _detectController.FieldOfViewCheck(_radius, _angle, _targetMask, _obstructionMask);
             
         }
