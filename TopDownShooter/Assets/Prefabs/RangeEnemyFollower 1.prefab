@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e43b2c7349a9bc429483459bd166a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
 --- !u!114 &1467738555797471300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,8 +340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fc09dfea662494390462faa793a477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 9.59
-  _angle: 70
+  _radius: 6.82
+  _angle: 60
   _targetMask:
     serializedVersion: 2
     m_Bits: 8
@@ -371,6 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52db043e985844b4f9efd8bf9a9e69d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
   _speed: 1
 --- !u!114 &9174778343941350658
 MonoBehaviour:

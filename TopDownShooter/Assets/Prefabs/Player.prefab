@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 8670966182825350366, guid: f021e6b758aaf5f4798be3ccf7ffb75d, type: 3}
   _firePoint: {fileID: 2468529066171363502}
+  ammoCount: 10
 --- !u!114 &2468529066536587097
 MonoBehaviour:
   m_ObjectHideFlags: 0
