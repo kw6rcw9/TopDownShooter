@@ -587,7 +587,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2468529066171363502, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.71
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 2468529066171363502, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
       propertyPath: m_LocalPosition.y
@@ -637,6 +637,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2468529066536587096, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
+      propertyPath: _anim
+      value: 
+      objectReference: {fileID: 130842177004633888, guid: b80167096a4761043a6876ba0f82f3c5, type: 3}
     - target: {fileID: 2468529066536587096, guid: 91a364b94d6474b4bb0ccbd1177f7f92, type: 3}
       propertyPath: ammoCage
       value: 30
@@ -6680,6 +6684,7 @@ GameObject:
   - component: {fileID: 1478961042}
   - component: {fileID: 1478961041}
   - component: {fileID: 1478961040}
+  - component: {fileID: 1478961046}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -6804,6 +6809,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1478961046
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478961039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: edd54ac901ca0c34ba15ffa5a7c63eb4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1481052204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7827,7 +7853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firePoint: {fileID: 2140911076}
-  _gun: {fileID: 2841246729405423421, guid: 4d9d3850550cf75449b0e3ca48653cd9, type: 3}
+  _gun: {fileID: 6671020523999153978, guid: b80167096a4761043a6876ba0f82f3c5, type: 3}
   _health: {fileID: 1161774319}
   _ammo: {fileID: 528060285}
   _player: {fileID: 1891458903}

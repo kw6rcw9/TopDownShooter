@@ -12,6 +12,7 @@ public class Shooting : MonoBehaviour
     public Action<int,int> AmmoView;
      [SerializeField] private int ammoCount;
      [SerializeField] private int ammoCage;
+    
     public int AmmoCount
     {
         get => ammoCount;
@@ -34,6 +35,7 @@ public class Shooting : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && ammoCount > 0)
             {
                 
+               
                 ShootBullet(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 ammoCount--;
                 AmmoView?.Invoke(ammoCount,ammoCage);
@@ -44,6 +46,7 @@ public class Shooting : MonoBehaviour
 
             if (ammoCount == 0)
             {
+                
                 if(!GetComponent<Reloading>())
                     gameObject.AddComponent<Reloading>();
 
