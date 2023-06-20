@@ -103,7 +103,7 @@ namespace UISystem
         public void Menu()
         {
             
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(0);
         }
     }
 }
