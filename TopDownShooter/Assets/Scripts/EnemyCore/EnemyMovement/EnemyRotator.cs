@@ -33,7 +33,7 @@ namespace EnemyCore.EnemyMovement
             }
              _rigidbody2D = GetComponent<Rigidbody2D>();
             _rigidbody2D.gravityScale = 0;
-            _rigidbody2D.mass = 10;
+            _rigidbody2D.mass = 5;
             _rigidbody2D.freezeRotation = true;
             _playerDetector = GetComponent<PlayerDetector>();
 

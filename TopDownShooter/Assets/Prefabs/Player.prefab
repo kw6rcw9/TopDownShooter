@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 2468529066536587096}
   - component: {fileID: 2468529066536587097}
   - component: {fileID: 4872093154979460793}
+  - component: {fileID: 7373795888529403166}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -173,6 +174,7 @@ MonoBehaviour:
   _bullet: {fileID: 8670966182825350366, guid: f021e6b758aaf5f4798be3ccf7ffb75d, type: 3}
   _firePoint: {fileID: 2468529066171363502}
   ammoCount: 10
+  ammoCage: 0
 --- !u!114 &2468529066536587097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +206,17 @@ MonoBehaviour:
   damageFromSniper: 33.13
   damageFromFighter: 5
   _healthBar: {fileID: 0}
+--- !u!114 &7373795888529403166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468529066536587102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc5c8352c0083d4b99ae72c6e4688ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoText: {fileID: 0}
+  shooting: {fileID: 2468529066536587096}

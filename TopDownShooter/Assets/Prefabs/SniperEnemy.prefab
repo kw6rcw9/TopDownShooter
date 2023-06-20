@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e43b2c7349a9bc429483459bd166a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
 --- !u!114 &4494695796087531750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,8 +654,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c76de83b43006b47ad6091cacb30662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
-  maxhp: 10
+  hp: 15
+  maxhp: 15
   damageToPatrol: 0
   damageToSniper: 5
   damageToFighter: 0

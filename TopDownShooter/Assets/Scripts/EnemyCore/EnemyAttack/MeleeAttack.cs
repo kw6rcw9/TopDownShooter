@@ -4,12 +4,10 @@ namespace EnemyCore.EnemyAttack
 {
     public class MeleeAttack : MonoBehaviour
     {
-        private PlayerDetector _playerDetect;
+        [SerializeField] private PlayerDetector _playerDetect;
+        
 
-        private void Start()
-        {
-            _playerDetect = GetComponent<PlayerDetector>();
-        }
+     
 
 
  

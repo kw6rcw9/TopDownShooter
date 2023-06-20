@@ -20,9 +20,9 @@ public class AmmoView : MonoBehaviour
     }
 
 
-    void AmmoChange(int ammo)
+    void AmmoChange(int ammo, int cage)
     {
-        ammoText.text = "Ammo: " + ammo;
+        ammoText.text = $"Ammo: {ammo}/{cage}";
     }
 
 }

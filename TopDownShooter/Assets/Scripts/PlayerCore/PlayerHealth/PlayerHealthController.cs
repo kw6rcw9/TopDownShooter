@@ -13,7 +13,12 @@ namespace PlayerCore.PlayerHealth
     {
         [SerializeField] private float _hp;
         [SerializeField] private float _Maxhp;
-        public float HP => _hp;
+
+        public float HP
+        {
+            get => _hp;
+            set { _hp = value;  }
+        }
         public float MaxHP => _Maxhp;
         [SerializeField] private float damageFromPetrol;
         [SerializeField] private float damageFromSniper;

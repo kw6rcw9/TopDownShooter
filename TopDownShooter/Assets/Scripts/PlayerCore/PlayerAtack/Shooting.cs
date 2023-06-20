@@ -9,13 +9,20 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField] private Bullet _bullet;
     [SerializeField] private Transform _firePoint;
-    public Action<int> AmmoView;
+    public Action<int,int> AmmoView;
      [SerializeField] private int ammoCount;
+     [SerializeField] private int ammoCage;
     public int AmmoCount
     {
         get => ammoCount;
         set { ammoCount = value;  }
     }
+    public int AmmoCage
+    {
+        get => ammoCage;
+        set { ammoCage = value;  }
+    }
+
 
    
 
@@ -23,13 +30,13 @@ public class Shooting : MonoBehaviour
     {
         if (Time.timeScale == 1)
         {
-            AmmoView?.Invoke(ammoCount);
+            AmmoView?.Invoke(ammoCount,ammoCage);
             if (Input.GetMouseButtonDown(0) && ammoCount > 0)
             {
                 
                 ShootBullet(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 ammoCount--;
-                AmmoView?.Invoke(ammoCount);
+                AmmoView?.Invoke(ammoCount,ammoCage);
                 
                 
                 
@@ -54,12 +61,5 @@ public class Shooting : MonoBehaviour
         Bullet bullet = Instantiate(_bullet, _firePoint.position, _firePoint.rotation);
     }
 
-    void Reload()
-    {
-        
-        ammoCount = 10;
-        AmmoView?.Invoke(ammoCount);
-
-
-    }
+    
 }

@@ -4,17 +4,20 @@ namespace EnemyCore.EnemyMovement
 {
     public class EnemyStaticRotate : MonoBehaviour
     {
-        Quaternion q1 = Quaternion.Euler(0, 0, 222);
-        Quaternion q2 = Quaternion.Euler(0, 0, 128);
+        [SerializeField]  private float _start;
+        [SerializeField] private float _end;
         private PlayerDetector _playerDetector;
         private EnemyRotator _rotator;
-
-
         private bool left;
         private bool right;
+        private Quaternion q1;
+        private Quaternion q2;
 
         void Start()
         {
+         
+             q1 = Quaternion.Euler(0, 0, _end);
+             q2 = Quaternion.Euler(0, 0, _start);
             _playerDetector = GetComponent<PlayerDetector>();
             _rotator = GetComponent<EnemyRotator>();
             left = true;
@@ -59,14 +62,14 @@ namespace EnemyCore.EnemyMovement
         private void RotateRight()
         {
             transform.rotation =
-                Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, 222), 4f * Time.deltaTime);
+                Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, _end), 4f * Time.deltaTime);
 
         }
 
         private void RotateLeft()
         {
             transform.rotation =
-                Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, 128), 4f * Time.deltaTime);
+                Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, _start), 4f * Time.deltaTime);
 
         }
     }

@@ -15,9 +15,21 @@ public class Reloading : MonoBehaviour
 
    void Reload()
    {
-      _ammo.AmmoCount = 10;
-      Reloading reloading = GetComponent<Reloading>();
-      Destroy(reloading);
+      if (_ammo.AmmoCage == 0)
+      {
+         _ammo.AmmoCount = 0;
+         _ammo.AmmoCage  = 0;
+         
+      }
+      else
+      {
+         _ammo.AmmoCount = 10;
+         _ammo.AmmoCage -= 10;
+         Reloading reloading = GetComponent<Reloading>();
+         Destroy(reloading);
+         
+      }
+      
       
    }
 }
