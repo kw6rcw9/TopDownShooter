@@ -28,6 +28,7 @@ public class NextLevel : MonoBehaviour
 
     private void Update()
     {
+        
         if (i != _enemies.Length)
         {
             if (!_enemies[i].activeSelf)
@@ -57,7 +58,7 @@ public class NextLevel : MonoBehaviour
            
         }
 
-        yield return new WaitForSeconds(2f);
+        
         LevelController.Instance.IsEndGame();
         
     }

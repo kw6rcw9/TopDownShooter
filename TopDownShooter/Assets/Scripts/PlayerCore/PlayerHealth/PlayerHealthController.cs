@@ -6,6 +6,7 @@ using UISystem.HPSystem;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace PlayerCore.PlayerHealth
 {
@@ -20,9 +21,9 @@ namespace PlayerCore.PlayerHealth
             set { _hp = value;  }
         }
         public float MaxHP => _Maxhp;
-        [SerializeField] private float damageFromPetrol;
-        [SerializeField] private float damageFromSniper;
-        [SerializeField] private float damageFromFighter;
+        [FormerlySerializedAs("damageFromPetrol")] [SerializeField] private float _damageFromPetrol;
+        [FormerlySerializedAs("damageFromSniper")] [SerializeField] private float _damageFromSniper;
+        [FormerlySerializedAs("damageFromFighter")] [SerializeField] private float _damageFromFighter;
         [SerializeField] private PlayerHealthBar _healthBar;
         public Action <int> HpChange;
         private float _damage;
@@ -35,22 +36,32 @@ namespace PlayerCore.PlayerHealth
         {
             if (col.gameObject.GetComponent<EnemyBullet>())
             {
-                TakeDamage(damageFromPetrol);
+                TakeDamage(_damageFromPetrol);
                 StartCoroutine(ChangeColor());
             }
             else if (col.gameObject.GetComponent<SniperBullet>())
             {
-                TakeDamage(damageFromSniper);
+                TakeDamage(_damageFromSniper);
                 StartCoroutine(ChangeColor());
             }
             
         }
 
-        private void OnCollisionEnter2D(Collision2D col)
+        private void OnCollisionExit2D(Collision2D col)
         {
              if (col.gameObject.GetComponent<MeleeAttack>())
+             {
+
+                 
+                StartCoroutine(ChangeColor());
+            }
+        }
+        private void OnCollisionEnter2D(Collision2D col)
+        {
+            if (col.gameObject.GetComponent<MeleeAttack>())
             {
-                TakeDamage(damageFromFighter);
+
+                TakeDamage(_damageFromFighter);
                 StartCoroutine(ChangeColor());
             }
         }
@@ -76,5 +87,7 @@ namespace PlayerCore.PlayerHealth
             GetComponent<Renderer>().material.color = Color.white;
 
         }
+
+        
     }
 }

@@ -513,7 +513,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d576547b2dfbe4841b0efad547ec3df8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -654,12 +654,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c76de83b43006b47ad6091cacb30662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 15
-  maxhp: 15
-  damageToPatrol: 0
-  damageToSniper: 5
-  damageToFighter: 0
-  healthBar: {fileID: 761641917}
+  _hp: 15
+  _maxhp: 15
+  _damageToPatrol: 0
+  _damageToSniper: 5
+  _damageToFighter: 0
+  _healthBar: {fileID: 761641917}
 --- !u!114 &5147322497084953073
 MonoBehaviour:
   m_ObjectHideFlags: 0

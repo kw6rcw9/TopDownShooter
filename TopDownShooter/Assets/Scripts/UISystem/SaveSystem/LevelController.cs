@@ -30,16 +30,13 @@ public class LevelController : MonoBehaviour
         {
             if (_levelComplete < _sceneInd)
                 PlayerPrefs.SetInt("LevelComplete", _sceneInd);
-            Invoke("NextLevel", 1f);
+            SceneManager.LoadScene(_sceneInd + 1);
                 
             
         }
     }
 
-    void NextLevel()
-    {
-        SceneManager.LoadScene(_sceneInd + 1);
-    }
+    
 
     void LoadMainMenu()
     {

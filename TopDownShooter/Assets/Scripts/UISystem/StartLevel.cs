@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartLevel : MonoBehaviour
@@ -16,22 +17,16 @@ public class StartLevel : MonoBehaviour
 
     private void Start()
     {
-        _text = _textGameObject.text;
-        _textGameObject.text = "";
         StartCoroutine(Fade());
-        StartCoroutine(Text());
-
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButton(0))
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            _message.gameObject.SetActive(false);
+            _text = _textGameObject.text;
+            _textGameObject.text = "";
+            StartCoroutine(Text());
+            
         }
-    }
 
-   
+    }
 
     IEnumerator Fade()
     {
@@ -42,7 +37,8 @@ public class StartLevel : MonoBehaviour
             color.a -= _speed * Time.deltaTime;
             _image.color = color;
             yield return null;
-            StartCoroutine(Message());
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+                StartCoroutine(Message());
         }
     }
 
