@@ -16,22 +16,22 @@ namespace UISystem
         [SerializeField] private Slider _sliderMusics;
 
         
-        // void Awake()
-        // {
-        //     if (PlayerPrefs.HasKey("Music")
-        //         && PlayerPrefs.HasKey("Effects"))
-        //     {
-        //         sliderEffects.value = PlayerPrefs.GetFloat("Effects");
-        //         sliderMusics.value = PlayerPrefs.GetFloat("Music");
-        //     }
-        //     else
-        //     {
-        //         PlayerPrefs.SetFloat("Music", sliderMusics.value);
-        //         PlayerPrefs.SetFloat("Effects", sliderEffects.value);
-        //     }
-        //     Debug.Log(sliderMusics.value);
-        //
-        // }
+        void Awake()
+        {
+            if (PlayerPrefs.HasKey("Music")
+                && PlayerPrefs.HasKey("Effects"))
+            {
+                _sliderEffects.value = PlayerPrefs.GetFloat("Effects");
+                _sliderMusics.value = PlayerPrefs.GetFloat("Music");
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("Music", _sliderMusics.value);
+                PlayerPrefs.SetFloat("Effects", _sliderEffects.value);
+            }
+            Debug.Log(_sliderMusics.value);
+        
+        }
 
         public void Play()
         {
@@ -59,8 +59,8 @@ namespace UISystem
 
         public void Back()
         {
-            // PlayerPrefs.SetFloat("Music", sliderMusics.value);
-            // PlayerPrefs.SetFloat("Effects", sliderEffects.value);
+            PlayerPrefs.SetFloat("Music", _sliderMusics.value);
+            PlayerPrefs.SetFloat("Effects", _sliderEffects.value);
 
             _menuPanel.SetActive(true);
             

@@ -8,6 +8,8 @@ using UnityEngine.Serialization;
 
 public class Shooting : MonoBehaviour
 {
+    [SerializeField] private AudioSource _reloadingSounds;
+    [SerializeField] private AudioSource _shootingSounds;
     [SerializeField] private Bullet _bullet;
     [SerializeField] private Transform _firePoint;
     public Action<int,int> AmmoView;
@@ -52,13 +54,22 @@ public class Shooting : MonoBehaviour
                 if (SceneManager.GetActiveScene().buildIndex == 3)
                 {
                     if(!GetComponent<ArenaReloading>())
+                    {
+                        
                         gameObject.AddComponent<ArenaReloading>();
+                        _reloadingSounds.Play();
+                    }
                     
                 }
                 else
                 {
-                    if(!GetComponent<Reloading>())
+                    if (!GetComponent<Reloading>())
+                    {
+                        
                         gameObject.AddComponent<Reloading>();
+                        _reloadingSounds.Play();
+                    }
+                        
                     
                 }
 
@@ -73,6 +84,7 @@ public class Shooting : MonoBehaviour
     }
     public void ShootBullet(Vector2 dir)
     {
+        _shootingSounds.Play();
         Bullet bullet = Instantiate(_bullet, _firePoint.position, _firePoint.rotation);
     }
 

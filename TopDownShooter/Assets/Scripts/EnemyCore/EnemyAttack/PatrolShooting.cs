@@ -5,11 +5,11 @@ namespace EnemyCore.EnemyAttack
 {
     public class PatrolShooting : MonoBehaviour
     { 
-        private PlayerDetector _playerDetector;
         [SerializeField] EnemyBullet _bullet;
-       
+        [SerializeField] private AudioSource _shootingSounds;
         [SerializeField] private Transform _firePoint;
         [SerializeField] private float _shootDelay;
+        private PlayerDetector _playerDetector;
         private float _time;
 
         private void Start()
@@ -35,6 +35,7 @@ namespace EnemyCore.EnemyAttack
         }
         public void ShootBullet()
         {
+            _shootingSounds.Play();
             Instantiate(_bullet, _firePoint.position, _firePoint.rotation);
         }
     }

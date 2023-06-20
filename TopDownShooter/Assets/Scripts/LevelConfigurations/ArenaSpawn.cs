@@ -18,7 +18,7 @@ public class ArenaSpawn : MonoBehaviour
     IEnumerator Spawn()
     {
         yield return new WaitForSeconds(2f);
-        int i = Random.Range(0, 3);
+        int i = Random.Range(0, 4);
         GameObject _enemyy = Instantiate(_enemy, _points[i].position, _enemy.transform.rotation);
         
         StartCoroutine(Spawn());
