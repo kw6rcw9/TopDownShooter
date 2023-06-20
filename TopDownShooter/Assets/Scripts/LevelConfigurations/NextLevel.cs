@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,26 +9,31 @@ public class NextLevel : MonoBehaviour
 {
     [SerializeField] private GameObject[] _enemies;
     private int i;
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnCollisionStay2D(Collision2D col)
     {
-        
-        if (Input.GetKey(KeyCode.E) && i == _enemies.Length )
+        if (col.gameObject.GetComponent<PlayerMovement>())
         {
-            SceneManager.LoadScene(2);
+            if (Input.GetKey(KeyCode.E) && i == _enemies.Length )
+            {
+                SceneManager.LoadScene(2);
+            }
+            
         }
+        
     }
 
     private void Update()
     {
-       
+        if (i != _enemies.Length)
+        {
             if (!_enemies[i].activeSelf)
-            {
+            { 
                 i++;
 
             }
-            
+        } 
         
-        Debug.Log(i);
+        
     }
 
     private void Start()
