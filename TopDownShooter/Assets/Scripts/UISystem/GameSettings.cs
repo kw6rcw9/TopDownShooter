@@ -16,21 +16,21 @@ namespace UISystem
         [SerializeField] private Slider sliderEffects;
         [SerializeField] private Slider sliderMusics;
         private bool _isPressed;
-        // void Awake()
-        // {
-        //     if (PlayerPrefs.HasKey("Music")
-        //         && PlayerPrefs.HasKey("Effects"))
-        //     {
-        //         sliderEffects.value = PlayerPrefs.GetFloat("Effects");
-        //         sliderMusics.value = PlayerPrefs.GetFloat("Music");
-        //     }
-        //     else
-        //     {
-        //         PlayerPrefs.SetFloat("Music", sliderMusics.value);
-        //         PlayerPrefs.SetFloat("Effects", sliderEffects.value);
-        //     }
-        //     
-        // }
+        void Awake()
+        {
+            if (PlayerPrefs.HasKey("Music")
+                && PlayerPrefs.HasKey("Effects"))
+            {
+                sliderEffects.value = PlayerPrefs.GetFloat("Effects");
+                sliderMusics.value = PlayerPrefs.GetFloat("Music");
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("Music", sliderMusics.value);
+                PlayerPrefs.SetFloat("Effects", sliderEffects.value);
+            }
+            
+        }
         private void Start()
         {
             _isPressed = false;
@@ -93,8 +93,8 @@ namespace UISystem
 
         public void Back()
         {
-            // PlayerPrefs.SetFloat("Music", sliderMusics.value);
-            // PlayerPrefs.SetFloat("Effects", sliderEffects.value);
+            PlayerPrefs.SetFloat("Music", sliderMusics.value);
+            PlayerPrefs.SetFloat("Effects", sliderEffects.value);
                 Time.timeScale = 1;
                 settingsPanel.SetActive(false);
             
@@ -103,7 +103,7 @@ namespace UISystem
         public void Menu()
         {
             
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(0);
         }
     }
 }

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using PlayerCore.PlayerHealth;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class PlayerDead : MonoBehaviour
 {
-   [SerializeField] private PlayerHealthController player;
-   [SerializeField] private GameObject panel;
+   [FormerlySerializedAs("player")] [SerializeField] private PlayerHealthController _player;
+   [FormerlySerializedAs("panel")] [SerializeField] private GameObject _panel;
 
    private void Start()
    {
@@ -17,10 +18,10 @@ public class PlayerDead : MonoBehaviour
 
    void Update()
     {
-        if (player.HP == 0)
+        if (_player.HP == 0)
         {
             Time.timeScale = 0;
-            panel.SetActive(true);
+            _panel.SetActive(true);
             
         }
        
@@ -29,13 +30,13 @@ public class PlayerDead : MonoBehaviour
 
     public  void Menu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
         Time.timeScale = 1;
     }
 
     public void Restart()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

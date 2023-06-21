@@ -5,47 +5,55 @@ using EnemyCore.EnemyMovement;
 using UISystem.HPSystem;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 namespace EnemyCore.EnemyHealth
 {
     public class EnemyHealthController : MonoBehaviour
     {
-        [SerializeField] private float hp;
-        [SerializeField] private float maxhp;
-        [SerializeField] private float damageToPatrol;
-        [SerializeField] private float damageToSniper;
-        [SerializeField] private float damageToFighter;
-        [SerializeField] private EnemyHealthBar healthBar;
+        [FormerlySerializedAs("hp")] [SerializeField] private float _hp;
+        [FormerlySerializedAs("maxhp")] [SerializeField] private float _maxhp;
+        [FormerlySerializedAs("damageToPatrol")] [SerializeField] private float _damageToPatrol;
+        [FormerlySerializedAs("damageToSniper")] [SerializeField] private float _damageToSniper;
+        [FormerlySerializedAs("damageToFighter")] [SerializeField] private float _damageToFighter;
+        [FormerlySerializedAs("healthBar")] [SerializeField] private EnemyHealthBar _healthBar;
         public Action<Transform> Explosion;
-        public float HP => hp;
-        public float MaxHP => maxhp;
+        
+        public float HP
+        {
+            get => _hp; 
+            
+        }
+
+        public float MaxHP => _maxhp;
         private float _damage;
+
+
         
-        
-       
+
         private void OnTriggerEnter2D(Collider2D col)
         {
             if (col.gameObject.GetComponent<Bullet>())
             {
-                healthBar.HealthBar.gameObject.SetActive(true);
+                _healthBar.HealthBar.gameObject.SetActive(true);
                 if (GetComponent<EnemyStaticRotate>())
                 {
-                TakeDamage(damageToPatrol);
+                TakeDamage(_damageToPatrol);
                 
                 
                     
                 }
                 else if (GetComponent<MeleeAttack>())
                 {
-                    TakeDamage(damageToFighter);
+                    TakeDamage(_damageToFighter);
                     
                     
                     
                 }
                 else if (gameObject.layer == 7)
                 {
-                    TakeDamage(damageToSniper);
+                    TakeDamage(_damageToSniper);
                     
                     
                     
@@ -59,20 +67,21 @@ namespace EnemyCore.EnemyHealth
    
         private void TakeDamage(float damageType)
         {
-            if (hp > 0)
+            if (_hp > 0)
             {
                 StartCoroutine(ChangeColor());
-                hp-= damageType;
-                if (hp < 0)
-                    hp = 0;
+                _hp-= damageType;
+                if (_hp < 0)
+                    _hp = 0;
                    
             }
-            healthBar.UpdateHealthBar();
-            if(hp == 0)
+            _healthBar.UpdateHealthBar();
+            if(_hp == 0)
             {
-                Explosion?.Invoke(gameObject.transform);
-                gameObject.SetActive(false);
-                
+
+                    Explosion?.Invoke(gameObject.transform);
+                    gameObject.SetActive(false);
+
             }
                    
         }

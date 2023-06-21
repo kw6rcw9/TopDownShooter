@@ -10,33 +10,34 @@ namespace UISystem
         [SerializeField] private GameObject _menuPanel;
         [SerializeField] private GameObject _instructionPanel;
         [SerializeField] private GameObject _settingsPanel;
+        [SerializeField] private GameObject _loadPanel;
         [SerializeField] private AudioMixer _audioMixer;
         [SerializeField] private Slider _sliderEffects;
         [SerializeField] private Slider _sliderMusics;
 
         
-        // void Awake()
-        // {
-        //     if (PlayerPrefs.HasKey("Music")
-        //         && PlayerPrefs.HasKey("Effects"))
-        //     {
-        //         sliderEffects.value = PlayerPrefs.GetFloat("Effects");
-        //         sliderMusics.value = PlayerPrefs.GetFloat("Music");
-        //     }
-        //     else
-        //     {
-        //         PlayerPrefs.SetFloat("Music", sliderMusics.value);
-        //         PlayerPrefs.SetFloat("Effects", sliderEffects.value);
-        //     }
-        //     Debug.Log(sliderMusics.value);
-        //
-        // }
+        void Awake()
+        {
+            if (PlayerPrefs.HasKey("Music")
+                && PlayerPrefs.HasKey("Effects"))
+            {
+                _sliderEffects.value = PlayerPrefs.GetFloat("Effects");
+                _sliderMusics.value = PlayerPrefs.GetFloat("Music");
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("Music", _sliderMusics.value);
+                PlayerPrefs.SetFloat("Effects", _sliderEffects.value);
+            }
+            Debug.Log(_sliderMusics.value);
+        
+        }
 
         public void Play()
         {
             PlayerPrefs.Save();
 
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
             Time.timeScale = 1;
         }
 
@@ -50,16 +51,21 @@ namespace UISystem
             _menuPanel.SetActive(false);
             _instructionPanel.SetActive(true);
         }
+        public void Load()
+        {
+            _menuPanel.SetActive(false);
+            _loadPanel.SetActive(true);
+        }
 
         public void Back()
         {
-            // PlayerPrefs.SetFloat("Music", sliderMusics.value);
-            // PlayerPrefs.SetFloat("Effects", sliderEffects.value);
+            PlayerPrefs.SetFloat("Music", _sliderMusics.value);
+            PlayerPrefs.SetFloat("Effects", _sliderEffects.value);
 
             _menuPanel.SetActive(true);
-            if(_settingsPanel.activeSelf)
-                _settingsPanel.SetActive(false);
-           
+            
+            _settingsPanel.SetActive(false);
+            _loadPanel.SetActive(false);
             _instructionPanel.SetActive(false);
             
         }

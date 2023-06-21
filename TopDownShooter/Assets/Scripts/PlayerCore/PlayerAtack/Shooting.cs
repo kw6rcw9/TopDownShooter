@@ -3,25 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class Shooting : MonoBehaviour
 {
+    [SerializeField] private AudioSource _reloadingSounds;
+    [SerializeField] private AudioSource _shootingSounds;
     [SerializeField] private Bullet _bullet;
     [SerializeField] private Transform _firePoint;
     public Action<int,int> AmmoView;
-     [SerializeField] private int ammoCount;
-     [SerializeField] private int ammoCage;
-    
+     [FormerlySerializedAs("ammoCount")] [SerializeField] private int _ammoCount;
+     [FormerlySerializedAs("ammoCage")] [SerializeField] private int _ammoCage;
     public int AmmoCount
     {
-        get => ammoCount;
-        set { ammoCount = value;  }
+        get => _ammoCount;
+        set { _ammoCount = value;  }
     }
     public int AmmoCage
     {
-        get => ammoCage;
-        set { ammoCage = value;  }
+        get => _ammoCage;
+        set { _ammoCage = value;  }
     }
 
 
@@ -31,24 +33,45 @@ public class Shooting : MonoBehaviour
     {
         if (Time.timeScale == 1)
         {
-            AmmoView?.Invoke(ammoCount,ammoCage);
-            if (Input.GetMouseButtonDown(0) && ammoCount > 0)
+            PlayerPrefs.SetInt("AmmoCount", AmmoCount);
+            PlayerPrefs.SetInt("AmmoCage", AmmoCage);
+            PlayerPrefs.Save();
+            
+            AmmoView?.Invoke(_ammoCount,_ammoCage);
+            if (Input.GetMouseButtonDown(0) && _ammoCount > 0)
             {
                 
-               
                 ShootBullet(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-                ammoCount--;
-                AmmoView?.Invoke(ammoCount,ammoCage);
+                _ammoCount--;
+                AmmoView?.Invoke(_ammoCount,_ammoCage);
                 
                 
                 
             }
 
-            if (ammoCount == 0)
+            if (_ammoCount == 0)
             {
-                
-                if(!GetComponent<Reloading>())
-                    gameObject.AddComponent<Reloading>();
+                if (SceneManager.GetActiveScene().buildIndex == 3)
+                {
+                    if(!GetComponent<ArenaReloading>())
+                    {
+                        
+                        gameObject.AddComponent<ArenaReloading>();
+                        _reloadingSounds.Play();
+                    }
+                    
+                }
+                else
+                {
+                    if (!GetComponent<Reloading>())
+                    {
+                        
+                        gameObject.AddComponent<Reloading>();
+                        _reloadingSounds.Play();
+                    }
+                        
+                    
+                }
 
             }
                 
@@ -61,6 +84,7 @@ public class Shooting : MonoBehaviour
     }
     public void ShootBullet(Vector2 dir)
     {
+        _shootingSounds.Play();
         Bullet bullet = Instantiate(_bullet, _firePoint.position, _firePoint.rotation);
     }
 

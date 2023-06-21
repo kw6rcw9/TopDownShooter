@@ -7,7 +7,7 @@ namespace EnemyCore.EnemyAttack
     { 
         private PlayerDetector _playerDetector;
         [SerializeField] SniperBullet _bullet;
-       
+        [SerializeField] private AudioSource _shootingSounds;
         [SerializeField] private Transform _firePoint;
         [SerializeField] private float _shootDelay;
         private float _time;
@@ -35,6 +35,7 @@ namespace EnemyCore.EnemyAttack
         }
         public void ShootBullet()
         {
+            _shootingSounds.Play();
             Instantiate(_bullet, _firePoint.position, _firePoint.rotation);
         }
     }
