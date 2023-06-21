@@ -23,14 +23,14 @@ namespace EnemyCore.EnemyHealth
         public float HP
         {
             get => _hp; 
-            set { _hp = value; }
+            
         }
 
         public float MaxHP => _maxhp;
         private float _damage;
 
 
-       
+        
 
         private void OnTriggerEnter2D(Collider2D col)
         {
